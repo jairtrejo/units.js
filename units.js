@@ -1,6 +1,6 @@
 /*
  * units.js javascript library.
- * version 0.1
+ * version 0.1.1
  * 
  * Copyright (c) 2011 by Jair Trejo.
  * Released under the MIT License - http://www.opensource.org/licenses/MIT 
@@ -145,6 +145,7 @@
                             'multiplier is not numeric.');
         }
         eqs[symbol] = { base : base_unit, mu : multiplier };
+        eqs['_' + symbol] = { base : '_' + base_unit, 'mu' : 1.0 / multiplier };
     }
 
     // adding the library to the global namespace under 'units'.

@@ -15,7 +15,7 @@ Use the `units.convert` method, like so:
     // Converting 3 ft to meters:
     var result = units.convert(3, 'ft', 'm');
 
-You can chain simple units, separated with hyphens, to form compund ones:
+You can chain simple units, separated with hyphens, to form compound ones:
 
     // Converting 9.2 kg*m to lb*ft
     var result = units.convert(9.2, 'kg-m', 'lb-ft');
@@ -28,13 +28,14 @@ Units prefixed with an underscore are interpreted as their reciprocal:
 To change the established equivalence for a unit, or to define a new one, use the `units.define` method:
 
     // Defining a new unit, rmb, which value is 0.1572 usd.
+    // Automatically adds _rmb which value is 1 / 0.1572 _usd.
     units.define('rmb', 'usd', 0.1572);
 
 Download
 --------
 
-* [units.js v0.1](https://github.com/jairtrejo/units.js/raw/master/units.js)
-* [units.min.js v0.1](https://github.com/jairtrejo/units.js/raw/master/units.min.js) - minified with yui compressor.
+* [units.js v0.1.1](https://github.com/jairtrejo/units.js/raw/master/units.js)
+* [units.min.js v0.1.1](https://github.com/jairtrejo/units.js/raw/master/units.min.js) - minified with yui compressor.
 * [github repository](https://github.com/jairtrejo/units.js)
 
 Licensing

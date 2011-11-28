@@ -35,6 +35,7 @@ $(document).ready(function(){
 
         units.define('rmb', 'usd', 0.1572);
         near_enough(units.convert(10, 'usd', 'rmb'), 63.6, 0.1);
+        equals(units.convert(3.14, '_rmb', '_usd'), 3.14 / 0.1572);
     });
 
 });
