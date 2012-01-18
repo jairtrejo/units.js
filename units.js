@@ -1,6 +1,6 @@
 /*
  * units.js javascript library.
- * version 0.1.1
+ * version 0.1.2
  * 
  * Copyright (c) 2011 by Jair Trejo.
  * Released under the MIT License - http://www.opensource.org/licenses/MIT 
@@ -60,10 +60,16 @@
 
     // For every unit u, we add it's reciprocal (1 / u) to the equivalence table.
     (function() {
+        var inverse = {};
         for(var eq in eqs){
             if(eqs.hasOwnProperty(eq)){
                 var u = eqs[eq];
-                eqs['_' + eq] = { base : '_' + u.base, 'mu' : 1.0 / u.mu };
+                inverse['_' + eq] = { base : '_' + u.base, 'mu' : 1.0 / u.mu };
+            }
+        }
+        for(var eq in inverse){
+            if(inverse.hasOwnProperty(eq)){
+                eqs[eq] = inverse[eq];
             }
         }
     }());
@@ -144,7 +150,7 @@
             throw new Error('define(symbol, base_unit, multiplier): ' +
                             'multiplier is not numeric.');
         }
-        eqs[symbol] = { base : base_unit, mu : multiplier };
+        eqs[symbol] = {base: base_unit, mu: multiplier};
         eqs['_' + symbol] = { base : '_' + base_unit, 'mu' : 1.0 / multiplier };
     }
 
