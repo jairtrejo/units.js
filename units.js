@@ -1,9 +1,9 @@
 /*
  * units.js javascript library.
  * version 0.1.2
- * 
+ *
  * Copyright (c) 2011 by Jair Trejo.
- * Released under the MIT License - http://www.opensource.org/licenses/MIT 
+ * Released under the MIT License - http://www.opensource.org/licenses/MIT
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -11,10 +11,10 @@
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -38,7 +38,7 @@
      * unit_symbol : { base : base_unit_symbol, mu : number_of_units_in_base_unit }
      *
      */
-    
+
     // Base equivalence table.
     var eqs = {
         // Mass
@@ -82,7 +82,7 @@
     var extract_units = function(units_string){
         return units_string.split('-');
     };
-    
+
     /*
      * API methods
      */
@@ -103,7 +103,7 @@
      *    var result = units.convert(3, 'ft', 'm');
      *
      * Converting 175 usd / (year * ft2) to mxn / (month * m2)
-     *    
+     *
      *    var result = units.convert(175, 'usd-_year-_ft2', 'mxn-_month-_m2');
      */
     var convert = lib.convert = function(val, from, to){
@@ -126,7 +126,7 @@
                                 'unit ' + uf + ' not found.');
             }
             if( !eqs.hasOwnProperty(ut) ){
-                throw new Error('convert(val, from, to): ' + 
+                throw new Error('convert(val, from, to): ' +
                                 'unit ' + ut + ' not found.');
             }
             if( eqs[uf].base !== eqs[ut].base ){
