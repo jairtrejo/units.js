@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Units.js by jairtrejo</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/jairtrejo/units.js">Fork On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/jairtrejo/units.js/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/jairtrejo/units.js/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Units.js</h1>
+          <p>A minimal javascript library for working with units conversions</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/jairtrejo">jairtrejo</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h2>Usage</h2>
+
+<p>Include the library in your html</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"units.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre>
+</div>
+
+
+<p>Use the <code>units.convert</code> method, like so:</p>
+
+<div class="highlight">
+<pre><span class="c1">// Converting 3 ft to meters:</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">units</span><span class="p">.</span><span class="nx">convert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'ft'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<p>You can chain simple units, separated with hyphens, to form compound ones:</p>
+
+<div class="highlight">
+<pre><span class="c1">// Converting 9.2 kg*m to lb*ft</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">units</span><span class="p">.</span><span class="nx">convert</span><span class="p">(</span><span class="mf">9.2</span><span class="p">,</span> <span class="s1">'kg-m'</span><span class="p">,</span> <span class="s1">'lb-ft'</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<p>Units prefixed with an underscore are interpreted as their reciprocal:</p>
+
+<div class="highlight">
+<pre><span class="c1">// Converting 175 usd / (year*ft2) to mxn / (month*m2)</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">units</span><span class="p">.</span><span class="nx">convert</span><span class="p">(</span><span class="mi">175</span><span class="p">,</span> <span class="s1">'usd-_year-_ft2'</span><span class="p">,</span> <span class="s1">'mxn-_month-_m2'</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<p>To change the established equivalence for a unit, or to define a new one, use the <code>units.define</code> method:</p>
+
+<div class="highlight">
+<pre><span class="c1">// Defining a new unit, rmb, which value is 0.1572 usd.</span>
+<span class="c1">// Automatically adds _rmb which value is 1 / 0.1572 _usd.</span>
+<span class="nx">units</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">'rmb'</span><span class="p">,</span> <span class="s1">'usd'</span><span class="p">,</span> <span class="mf">0.1572</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<h2>Download</h2>
+
+<ul>
+<li><a href="https://github.com/jairtrejo/units.js/raw/master/units.js">units.js v0.1.1</a></li>
+<li>
+<a href="https://github.com/jairtrejo/units.js/raw/master/units.min.js">units.min.js v0.1.1</a> - minified with yui compressor.</li>
+<li><a href="https://github.com/jairtrejo/units.js">github repository</a></li>
+</ul><h2>Licensing</h2>
+
+<p><strong>unit.js</strong> is released under the MIT License, as can be found here: <a href="http://www.opensource.org/licenses/MIT">MIT License</a>.</p>
+
+<h2>About the author</h2>
+
+<p><strong>unit.js</strong> is a project by <a href="http://jairtrejo.mx">Jair Trejo</a>.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
